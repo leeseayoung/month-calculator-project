@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import Home from "../pages/Home";
 //월 버튼 꾸미기
 const monthBtn = {
   width: "100px",
@@ -23,33 +23,16 @@ const monthBox = {
 const AddMonth = ({ selectdMonth, setSelectdMonth }) => {
   //map으로 만들기!
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const monthNames = [
-    "1월",
-    "2월",
-    "3월",
-    "4월",
-    "5월",
-    "6월",
-    "7월",
-    "8월",
-    "9월",
-    "10월",
-    "11월",
-    "12월",
-  ];
 
   return (
     <div style={monthBox}>
-      {months.map((month, index) => (
+      {months.map((month) => (
         <button
           key={month}
-          style={monthBtn}
           onClick={() => {
-            alert(month + "월");
+            setSelectdMonth(month);
           }}
-        >
-          {monthNames[index]}
-        </button>
+        >{`${month}월`}</button>
       ))}
     </div>
   );
